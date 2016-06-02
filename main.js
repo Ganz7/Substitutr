@@ -1,9 +1,11 @@
 // Update HTML
 
 chrome.storage.sync.get("wordsObj", function(obj){
-	alert("Object read - " + obj);
+	console.log("Object read - " + obj);
+	var DOM = document.body.innerHTML;
 	for(var wKey in obj){
-		document.body.innerHTML = document.body.innerHTML.replace(new RegExp(wKey, "g"), obj[wKey]);
+		DOM = DOM.replace(new RegExp(wKey, "g"), obj[wKey]);
 	}
+	document.body.innerHTML = DOM;
 });
 //document.body.innerHTML = document.body.innerHTML.replace(new RegExp("Ganesh", "g"), "Ganz");

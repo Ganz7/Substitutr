@@ -3,7 +3,7 @@
   "name": "Substitutr",
   "description": "Substitute specific text in your webpage with a replacement.",
   "version": "1.0",
-  "permissions":["https://*/*", "http://*//*"],
+  "permissions":["https://*/*", "http://*//*", "storage"],
   "content_scripts":[
   		{ "matches": ["https://*/*", "http://*//*"],
   		  "js": ["main.js"],
