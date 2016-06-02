@@ -11,6 +11,8 @@ chrome.storage.sync.get('wordsObj', function(data){
 		/* Replace each of the words to be substituted from the list */
 		for(var wKey in list){
 			DOM = DOM.replace(new RegExp(wKey, "g"), list[wKey]);
+
+			// TODO: Gotta ignore URLS.
 		}
 
 		/* Update the page */

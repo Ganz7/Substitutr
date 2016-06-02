@@ -1,7 +1,7 @@
 
 function save_options(){
 	var wordSubstitutions = document.getElementById('sList').value;
-	
+
 	chrome.storage.sync.set({
     	'wordsObj': wordSubstitutions
 	}, function() {
@@ -15,3 +15,9 @@ function save_options(){
 }
 
 document.getElementById('save').addEventListener('click', save_options);
+
+chrome.storage.sync.get('wordsObj', function(data){
+	if (!chrome.runtime.error) {
+		document.getElementById("sList").innerHTML = data.wordsObj;
+	}
+});
